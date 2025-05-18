@@ -1,0 +1,94 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-bangchamcong-heading"
+        data-cy="BangchamcongCreateUpdateHeading"
+        jhiTranslate="doAnApp.bangchamcong.home.createOrEditLabel"
+      >
+        Create or edit a Bangchamcong
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.bangchamcong.ncdilam" for="field_ncdilam">Ncdilam</label>
+          <input type="number" class="form-control" name="ncdilam" id="field_ncdilam" data-cy="ncdilam" formControlName="ncdilam" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.bangchamcong.thangcc" for="field_thangcc">Thangcc</label>
+          <input type="text" class="form-control" name="thangcc" id="field_thangcc" data-cy="thangcc" formControlName="thangcc" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.bangchamcong.nclephep" for="field_nclephep">Nclephep</label>
+          <input type="number" class="form-control" name="nclephep" id="field_nclephep" data-cy="nclephep" formControlName="nclephep" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.bangchamcong.xeploai" for="field_xeploai">Xeploai</label>
+          <input type="text" class="form-control" name="xeploai" id="field_xeploai" data-cy="xeploai" formControlName="xeploai" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.bangchamcong.ngayththuong" for="field_ngayththuong">Ngayththuong</label>
+          <input
+            type="number"
+            class="form-control"
+            name="ngayththuong"
+            id="field_ngayththuong"
+            data-cy="ngayththuong"
+            formControlName="ngayththuong"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.bangchamcong.ngaythle" for="field_ngaythle">Ngaythle</label>
+          <input type="number" class="form-control" name="ngaythle" id="field_ngaythle" data-cy="ngaythle" formControlName="ngaythle" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.bangchamcong.nhanvien" for="field_nhanvien">Nhanvien</label>
+          <select
+            class="form-control"
+            id="field_nhanvien"
+            data-cy="nhanvien"
+            name="nhanvien"
+            formControlName="nhanvien"
+            [compareWith]="compareNhanvien"
+          >
+            <option [ngValue]="null"></option>
+            @for (nhanvienOption of nhanviensSharedCollection; track $index) {
+              <option [ngValue]="nhanvienOption">{{ nhanvienOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

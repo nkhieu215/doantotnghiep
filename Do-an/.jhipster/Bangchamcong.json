@@ -1,0 +1,46 @@
+{
+  "annotations": {
+    "changelogDate": "20250413123759"
+  },
+  "fields": [
+    {
+      "fieldName": "ncdilam",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "thangcc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nclephep",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "xeploai",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayththuong",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ngaythle",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Bangchamcong",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "nhanvien",
+      "otherEntityRelationshipName": "bangchamcong",
+      "relationshipName": "nhanvien",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "no"
+}

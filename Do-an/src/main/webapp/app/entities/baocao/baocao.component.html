@@ -1,0 +1,8 @@
+<label for="reportType">Chọn loại báo cáo:</label>
+<select id="reportType" [(ngModel)]="selectedReportType">
+    <option value="tax">Báo cáo thuế thu nhập cá nhân</option>
+    <option value="insurance">Báo cáo bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp</option>
+    <option value="salary">Bảng thanh toán lương</option>
+</select>
+
+<p>Bạn đã chọn: {{ selectedReportType }}</p>

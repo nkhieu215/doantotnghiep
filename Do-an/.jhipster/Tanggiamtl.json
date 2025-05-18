@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20250413123919"
+  },
+  "fields": [
+    {
+      "fieldName": "ngaythang",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tkn",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tkc",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sotien",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "diengiai",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Tanggiamtl",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "nhanvien",
+      "otherEntityRelationshipName": "tanggiamtl",
+      "relationshipName": "nhanvien",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "no"
+}

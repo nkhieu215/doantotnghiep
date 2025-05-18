@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (bangchamcong) {
+      <div>
+        <h2 data-cy="bangchamcongDetailsHeading"><span jhiTranslate="doAnApp.bangchamcong.detail.title">Bangchamcong</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ bangchamcong.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.bangchamcong.ncdilam">Ncdilam</span></dt>
+          <dd>
+            <span>{{ bangchamcong.ncdilam }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.bangchamcong.thangcc">Thangcc</span></dt>
+          <dd>
+            <span>{{ bangchamcong.thangcc }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.bangchamcong.nclephep">Nclephep</span></dt>
+          <dd>
+            <span>{{ bangchamcong.nclephep }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.bangchamcong.xeploai">Xeploai</span></dt>
+          <dd>
+            <span>{{ bangchamcong.xeploai }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.bangchamcong.ngayththuong">Ngayththuong</span></dt>
+          <dd>
+            <span>{{ bangchamcong.ngayththuong }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.bangchamcong.ngaythle">Ngaythle</span></dt>
+          <dd>
+            <span>{{ bangchamcong.ngaythle }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.bangchamcong.nhanvien">Nhanvien</span></dt>
+          <dd>
+            @if (bangchamcong.nhanvien) {
+              <div>
+                <a [routerLink]="['/nhanvien', bangchamcong.nhanvien.id, 'view']">{{ bangchamcong.nhanvien.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/bangchamcong', bangchamcong.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

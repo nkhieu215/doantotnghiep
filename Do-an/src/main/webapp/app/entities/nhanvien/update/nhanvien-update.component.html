@@ -1,0 +1,120 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-nhanvien-heading" data-cy="NhanvienCreateUpdateHeading" jhiTranslate="doAnApp.nhanvien.home.createOrEditLabel">
+        Create or edit a Nhanvien
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.manv" for="field_manv">Manv</label>
+          <input type="text" class="form-control" name="manv" id="field_manv" data-cy="manv" formControlName="manv" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.hoten" for="field_hoten">Hoten</label>
+          <input type="text" class="form-control" name="hoten" id="field_hoten" data-cy="hoten" formControlName="hoten" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.ngaysinh" for="field_ngaysinh">Ngaysinh</label>
+          <div class="d-flex">
+            <input
+              id="field_ngaysinh"
+              data-cy="ngaysinh"
+              type="datetime-local"
+              class="form-control"
+              name="ngaysinh"
+              formControlName="ngaysinh"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.gioitinh" for="field_gioitinh">Gioitinh</label>
+          <input type="text" class="form-control" name="gioitinh" id="field_gioitinh" data-cy="gioitinh" formControlName="gioitinh" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.quequan" for="field_quequan">Quequan</label>
+          <input type="text" class="form-control" name="quequan" id="field_quequan" data-cy="quequan" formControlName="quequan" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.diachi" for="field_diachi">Diachi</label>
+          <input type="text" class="form-control" name="diachi" id="field_diachi" data-cy="diachi" formControlName="diachi" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.hsluong" for="field_hsluong">Hsluong</label>
+          <input type="number" class="form-control" name="hsluong" id="field_hsluong" data-cy="hsluong" formControlName="hsluong" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.msthue" for="field_msthue">Msthue</label>
+          <input type="number" class="form-control" name="msthue" id="field_msthue" data-cy="msthue" formControlName="msthue" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.chucvu" for="field_chucvu">Chucvu</label>
+          <select
+            class="form-control"
+            id="field_chucvu"
+            data-cy="chucvu"
+            name="chucvu"
+            formControlName="chucvu"
+            [compareWith]="compareChucvu"
+          >
+            <option [ngValue]="null"></option>
+            @for (chucvuOption of chucvusSharedCollection; track $index) {
+              <option [ngValue]="chucvuOption">{{ chucvuOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.nhanvien.phongban" for="field_phongban">Phongban</label>
+          <select
+            class="form-control"
+            id="field_phongban"
+            data-cy="phongban"
+            name="phongban"
+            formControlName="phongban"
+            [compareWith]="comparePhongban"
+          >
+            <option [ngValue]="null"></option>
+            @for (phongbanOption of phongbansSharedCollection; track $index) {
+              <option [ngValue]="phongbanOption">{{ phongbanOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

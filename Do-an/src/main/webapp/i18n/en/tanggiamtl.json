@@ -1,0 +1,29 @@
+{
+  "doAnApp": {
+    "tanggiamtl": {
+      "home": {
+        "title": "Tăng giảm tiền lương",
+        "refreshListLabel": "Tải lại danh sách",
+        "createLabel": "Tạo mới tăng giảm tiền lương",
+        "createOrEditLabel": "Tạo hoặc chỉnh sửa tăng giảm tiền lương",
+        "notFound": "Không có tăng giảm tiền lương nào được tìm thấy"
+      },
+      "created": "Một tăng giảm tiền lương mới được tạo với định danh {{ param }}",
+      "updated": "Một tăng giảm tiền lương được cập nhật với định danh {{ param }}",
+      "deleted": "Một tăng giảm tiền lương được xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc muốn xóa tăng giảm tiền lương {{ id }}?"
+      },
+      "detail": {
+        "title": "Tăng giảm tiền lương"
+      },
+      "id": "ID",
+      "ngaythang": "Ngày tháng",
+      "tkn": "Tài khoản Nợ",
+      "tkc": "Tài khoản Có",
+      "sotien": "Số tiền",
+      "diengiai": "Diễn giải",
+      "nhanvien": "Nhân viên"
+    }
+  }
+}

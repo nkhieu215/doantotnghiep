@@ -1,0 +1,30 @@
+{
+  "doAnApp": {
+    "bangchamcong": {
+      "home": {
+        "title": "Bảng chấm công",
+        "refreshListLabel": "Tải lại trang",
+        "createLabel": "Thêm mới Bảng chấm công",
+        "createOrEditLabel": "Thêm mới chỉnh sửa Bảng chấm công",
+        "notFound": "Không tìm thấy Bảng chấm công"
+      },
+      "created": "Thông tin thêm mới bảng chấm công :: {{ param }}",
+      "updated": "Thông tin chỉnh sửa bảng chấm công :: {{ param }}",
+      "deleted": "Thông tin xóa bảng chấm công :: {{ param }}",
+      "delete": {
+        "question": " Bạn chắc chắn muốn xóa bảng chấm công ?  {{ id }}?"
+      },
+      "detail": {
+        "title": "Bangchamcong"
+      },
+      "id": "ID",
+      "ncdilam": "Ngày công đi làm",
+      "thangcc": "Tháng năm",
+      "nclephep": "Ngày công lễ, phép",
+      "xeploai": "Xếp loại",
+      "ngayththuong": "Thêm giờ thường",
+      "ngaythle": "Thêm giờ lễ",
+      "nhanvien": "Nhân viên"
+    }
+  }
+}

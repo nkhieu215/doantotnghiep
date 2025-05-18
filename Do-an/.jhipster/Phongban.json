@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20250413123147"
+  },
+  "fields": [
+    {
+      "fieldName": "mapb",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tenpb",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sdt",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Phongban",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "no"
+}

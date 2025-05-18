@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3">
+    <span class="hipster img-fluid rounded"></span>
+  </div>
+
+  <div class="col-md-9">
+    <h1 class="display-4">PHẦN MỀM KẾ TOÁN TIỀN LƯƠNG </h1>
+
+    <p class="lead">Trang chủ</p>
+
+    <div>
+      @if (account() !== null) {
+      <div class="alert alert-success">
+        @if (account()) {
+        <span id="home-logged-message" jhiTranslate="home.logged.message"
+          [translateValues]="{ username: account()!.login }">You are logged in as user &quot;{{ account()!.login
+          }}&quot;.</span>
+        }
+      </div>
+      } @else {
+      <div class="alert alert-warning">
+        <a class="alert-link" (click)="login()">Đăng nhập </a><br><span> Tài khoản mặc định :<br />-
+          Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;) <br />- User
+          (login=&quot;user&quot; and password=&quot;user&quot;).</span>
+      </div>
+
+      <div class="alert alert-warning">
+        <span>Nếu bạn chưa có tài khoản =></span>&nbsp;
+        <a class="alert-link" routerLink="/account/register">Đăng ký
+          tài khoản mới</a>
+      </div>
+      }
+    </div>
+
+  </div>
+</div>

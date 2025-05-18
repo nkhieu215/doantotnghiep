@@ -1,0 +1,36 @@
+{
+  "doAnApp": {
+    "nhanvien": {
+      "home": {
+        "title": "Nhân viên",
+        "refreshListLabel": "RTải lại danh sách",
+        "createLabel": "Tạo mới nhân viên",
+        "createOrEditLabel": "Tạo hoặc chỉnh sửa nhân viên",
+        "notFound": "Không có nhân viên nào được tìm thấy"
+      },
+      "created": "Một nhân viên mới được tạo với định danh {{ param }}",
+      "updated": "Một nhân viên được cập nhật với định danh {{ param }}",
+      "deleted": "Một nhân viên được xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc muốn xóa nhân viên {{ id }}?"
+      },
+      "detail": {
+        "title": "Nhân viên"
+      },
+      "id": "ID",
+      "manv": "Mã nhân viên",
+      "hoten": "Họ tên",
+      "ngaysinh": "Ngày sinh",
+      "gioitinh": "Giới tính",
+      "quequan": "Quê quán",
+      "diachi": "Địa chỉ",
+      "hsluong": "Hệ số lương",
+      "msthue": "Mã số thuế",
+      "chucvu": "Chức vụ",
+      "phongban": "Phòng ban",
+      "bangchamcong": "Bảng chấm công",
+      "tanggiamtl": "Tăng giảm tiền lương",
+      "thamsotl": "Tham số tính lương"
+    }
+  }
+}

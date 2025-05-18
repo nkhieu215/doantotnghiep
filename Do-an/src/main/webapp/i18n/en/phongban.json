@@ -1,0 +1,27 @@
+{
+  "doAnApp": {
+    "phongban": {
+      "home": {
+        "title": "Phòng ban",
+        "refreshListLabel": "Tải lại danh sách",
+        "createLabel": "Tạo mới một phòng ban",
+        "createOrEditLabel": "CTạo hoặc chỉnh sửa phòng ban",
+        "notFound": "Khong có phòng ban nào được tìm thấy"
+      },
+      "created": "Một phòng ban mới được tạo với định danh {{ param }}",
+      "updated": "Một phòng ban được cập nhật với định danh {{ param }}",
+      "deleted": "Một phòng ban được xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc muốn xóa phòng ban {{ id }}?"
+      },
+      "detail": {
+        "title": "Phòng ban"
+      },
+      "id": "ID",
+      "mapb": "Mã phòng ban",
+      "tenpb": "Tên phòng ban",
+      "sdt": "Số điện thoại",
+      "nhanvien": "Nhân viên"
+    }
+  }
+}

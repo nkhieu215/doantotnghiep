@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-tanggiamtl-heading" data-cy="TanggiamtlCreateUpdateHeading" jhiTranslate="doAnApp.tanggiamtl.home.createOrEditLabel">
+        Create or edit a Tanggiamtl
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.tanggiamtl.ngaythang" for="field_ngaythang">Ngaythang</label>
+          <input type="text" class="form-control" name="ngaythang" id="field_ngaythang" data-cy="ngaythang" formControlName="ngaythang" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.tanggiamtl.tkn" for="field_tkn">Tkn</label>
+          <input type="number" class="form-control" name="tkn" id="field_tkn" data-cy="tkn" formControlName="tkn" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.tanggiamtl.tkc" for="field_tkc">Tkc</label>
+          <input type="number" class="form-control" name="tkc" id="field_tkc" data-cy="tkc" formControlName="tkc" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.tanggiamtl.sotien" for="field_sotien">Sotien</label>
+          <input type="number" class="form-control" name="sotien" id="field_sotien" data-cy="sotien" formControlName="sotien" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.tanggiamtl.diengiai" for="field_diengiai">Diengiai</label>
+          <input type="text" class="form-control" name="diengiai" id="field_diengiai" data-cy="diengiai" formControlName="diengiai" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.tanggiamtl.nhanvien" for="field_nhanvien">Nhanvien</label>
+          <select
+            class="form-control"
+            id="field_nhanvien"
+            data-cy="nhanvien"
+            name="nhanvien"
+            formControlName="nhanvien"
+            [compareWith]="compareNhanvien"
+          >
+            <option [ngValue]="null"></option>
+            @for (nhanvienOption of nhanviensSharedCollection; track $index) {
+              <option [ngValue]="nhanvienOption">{{ nhanvienOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (thuetn) {
+      <div>
+        <h2 data-cy="thuetnDetailsHeading"><span jhiTranslate="doAnApp.thuetn.detail.title">Thuetn</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ thuetn.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thuetn.bacthue">Bacthue</span></dt>
+          <dd>
+            <span>{{ thuetn.bacthue }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thuetn.tu">Tu</span></dt>
+          <dd>
+            <span>{{ thuetn.tu }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thuetn.den">Den</span></dt>
+          <dd>
+            <span>{{ thuetn.den }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thuetn.thuesuat">Thuesuat</span></dt>
+          <dd>
+            <span>{{ thuetn.thuesuat }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/thuetn', thuetn.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-thamsotl-heading" data-cy="ThamsotlCreateUpdateHeading" jhiTranslate="doAnApp.thamsotl.home.createOrEditLabel">
+        Create or edit a Thamsotl
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.thangnam" for="field_thangnam">Thangnam</label>
+          <input type="text" class="form-control" name="thangnam" id="field_thangnam" data-cy="thangnam" formControlName="thangnam" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.ncchuan" for="field_ncchuan">Ncchuan</label>
+          <input type="number" class="form-control" name="ncchuan" id="field_ncchuan" data-cy="ncchuan" formControlName="ncchuan" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.giocchuan" for="field_giocchuan">Giocchuan</label>
+          <input type="number" class="form-control" name="giocchuan" id="field_giocchuan" data-cy="giocchuan" formControlName="giocchuan" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.hsgioth" for="field_hsgioth">Hsgioth</label>
+          <input type="number" class="form-control" name="hsgioth" id="field_hsgioth" data-cy="hsgioth" formControlName="hsgioth" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.hsgiole" for="field_hsgiole">Hsgiole</label>
+          <input type="number" class="form-control" name="hsgiole" id="field_hsgiole" data-cy="hsgiole" formControlName="hsgiole" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.pcan" for="field_pcan">Pcan</label>
+          <input type="number" class="form-control" name="pcan" id="field_pcan" data-cy="pcan" formControlName="pcan" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.tlbhxh" for="field_tlbhxh">Tlbhxh</label>
+          <input type="number" class="form-control" name="tlbhxh" id="field_tlbhxh" data-cy="tlbhxh" formControlName="tlbhxh" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.tlbhyt" for="field_tlbhyt">Tlbhyt</label>
+          <input type="number" class="form-control" name="tlbhyt" id="field_tlbhyt" data-cy="tlbhyt" formControlName="tlbhyt" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.tlbhtn" for="field_tlbhtn">Tlbhtn</label>
+          <input type="text" class="form-control" name="tlbhtn" id="field_tlbhtn" data-cy="tlbhtn" formControlName="tlbhtn" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.tlkpcd" for="field_tlkpcd">Tlkpcd</label>
+          <input type="number" class="form-control" name="tlkpcd" id="field_tlkpcd" data-cy="tlkpcd" formControlName="tlkpcd" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="doAnApp.thamsotl.nhanvien" for="field_nhanvien">Nhanvien</label>
+          <select
+            class="form-control"
+            id="field_nhanvien"
+            data-cy="nhanvien"
+            name="nhanvien"
+            formControlName="nhanvien"
+            [compareWith]="compareNhanvien"
+          >
+            <option [ngValue]="null"></option>
+            @for (nhanvienOption of nhanviensCollection; track $index) {
+              <option [ngValue]="nhanvienOption">{{ nhanvienOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

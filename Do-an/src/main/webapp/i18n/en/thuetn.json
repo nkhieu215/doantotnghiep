@@ -1,0 +1,27 @@
+{
+  "doAnApp": {
+    "thuetn": {
+      "home": {
+        "title": "Thuế thu nhập cá nhân",
+        "refreshListLabel": "Tải lại danh sách",
+        "createLabel": "Tạo mới thuế thu nhập cá nhân",
+        "createOrEditLabel": "Tạo hoặc chỉnh sửa thuế thu nhập cá nhân",
+        "notFound": "Không có thuế thu nhập cá nhân nào được tìm thấy"
+      },
+      "created": "Thuế thu nhập cá nhân được tạo mvới định danh {{ param }}",
+      "updated": "Thuế thu nhập cá nhân được cập nhật với định danh{{ param }}",
+      "deleted": "Thuế thu nhập cá nhân được xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc muốn xóa thuế thu nhập cá nhân {{ id }}?"
+      },
+      "detail": {
+        "title": "Thuế thu nhập cá nhân"
+      },
+      "id": "ID",
+      "bacthue": "Bậc thuế",
+      "tu": "Từ",
+      "den": "Đến",
+      "thuesuat": "Thuế suất"
+    }
+  }
+}

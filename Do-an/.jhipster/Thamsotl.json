@@ -1,0 +1,63 @@
+{
+  "annotations": {
+    "changelogDate": "20250413124338"
+  },
+  "fields": [
+    {
+      "fieldName": "thangnam",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ncchuan",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "giocchuan",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hsgioth",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "hsgiole",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "pcan",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tlbhxh",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tlbhyt",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tlbhtn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tlkpcd",
+      "fieldType": "Float"
+    }
+  ],
+  "name": "Thamsotl",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "id": false,
+      "otherEntityField": "id",
+      "otherEntityName": "nhanvien",
+      "otherEntityRelationshipName": "thamsotl",
+      "relationshipName": "nhanvien",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "no"
+}

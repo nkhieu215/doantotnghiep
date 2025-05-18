@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (thamsotl) {
+      <div>
+        <h2 data-cy="thamsotlDetailsHeading"><span jhiTranslate="doAnApp.thamsotl.detail.title">Thamsotl</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ thamsotl.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.thangnam">Thangnam</span></dt>
+          <dd>
+            <span>{{ thamsotl.thangnam }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.ncchuan">Ncchuan</span></dt>
+          <dd>
+            <span>{{ thamsotl.ncchuan }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.giocchuan">Giocchuan</span></dt>
+          <dd>
+            <span>{{ thamsotl.giocchuan }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.hsgioth">Hsgioth</span></dt>
+          <dd>
+            <span>{{ thamsotl.hsgioth }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.hsgiole">Hsgiole</span></dt>
+          <dd>
+            <span>{{ thamsotl.hsgiole }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.pcan">Pcan</span></dt>
+          <dd>
+            <span>{{ thamsotl.pcan }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.tlbhxh">Tlbhxh</span></dt>
+          <dd>
+            <span>{{ thamsotl.tlbhxh }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.tlbhyt">Tlbhyt</span></dt>
+          <dd>
+            <span>{{ thamsotl.tlbhyt }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.tlbhtn">Tlbhtn</span></dt>
+          <dd>
+            <span>{{ thamsotl.tlbhtn }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.tlkpcd">Tlkpcd</span></dt>
+          <dd>
+            <span>{{ thamsotl.tlkpcd }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.thamsotl.nhanvien">Nhanvien</span></dt>
+          <dd>
+            @if (thamsotl.nhanvien) {
+              <div>
+                <a [routerLink]="['/nhanvien', thamsotl.nhanvien.id, 'view']">{{ thamsotl.nhanvien.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/thamsotl', thamsotl.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (tanggiamtl) {
+      <div>
+        <h2 data-cy="tanggiamtlDetailsHeading"><span jhiTranslate="doAnApp.tanggiamtl.detail.title">Tanggiamtl</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ tanggiamtl.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.tanggiamtl.ngaythang">Ngaythang</span></dt>
+          <dd>
+            <span>{{ tanggiamtl.ngaythang }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.tanggiamtl.tkn">Tkn</span></dt>
+          <dd>
+            <span>{{ tanggiamtl.tkn }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.tanggiamtl.tkc">Tkc</span></dt>
+          <dd>
+            <span>{{ tanggiamtl.tkc }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.tanggiamtl.sotien">Sotien</span></dt>
+          <dd>
+            <span>{{ tanggiamtl.sotien }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.tanggiamtl.diengiai">Diengiai</span></dt>
+          <dd>
+            <span>{{ tanggiamtl.diengiai }}</span>
+          </dd>
+          <dt><span jhiTranslate="doAnApp.tanggiamtl.nhanvien">Nhanvien</span></dt>
+          <dd>
+            @if (tanggiamtl.nhanvien) {
+              <div>
+                <a [routerLink]="['/nhanvien', tanggiamtl.nhanvien.id, 'view']">{{ tanggiamtl.nhanvien.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/tanggiamtl', tanggiamtl.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

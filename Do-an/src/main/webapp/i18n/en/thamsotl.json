@@ -1,0 +1,34 @@
+{
+  "doAnApp": {
+    "thamsotl": {
+      "home": {
+        "title": "Tham số tính lương",
+        "refreshListLabel": "Tải lại danh sách",
+        "createLabel": "Tạo mới một tham số tính lương",
+        "createOrEditLabel": "Tạo hoặc chỉnh sửa tham số tính lương",
+        "notFound": "Không có tham số tính lương nào được tìm thấy"
+      },
+      "created": "Một tham số tính lương mới được tạo với định danh {{ param }}",
+      "updated": "Một tham số tính lương được cập nhật với định danh {{ param }}",
+      "deleted": "Một tham số tính lương được xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc muốn xóa tham số tính lương {{ id }}?"
+      },
+      "detail": {
+        "title": "Tham số tính lương"
+      },
+      "id": "ID",
+      "thangnam": "Tháng năm",
+      "ncchuan": "Ngày công chuẩn",
+      "giocchuan": "Giờ công chuẩn",
+      "hsgioth": "Hệ số làm thêm ngày thường",
+      "hsgiole": "Hệ số làm thêm ngày lễ",
+      "pcan": "Phụ cấp ăn",
+      "tlbhxh": "Hệ số BHXH",
+      "tlbhyt": "Hệ số BHYT",
+      "tlbhtn": "Hệ số BHTN",
+      "tlkpcd": "Hệ số KPCĐ",
+      "nhanvien": "Nhân viên"
+    }
+  }
+}

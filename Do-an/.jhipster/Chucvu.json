@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20250413123103"
+  },
+  "fields": [
+    {
+      "fieldName": "macv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tencv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hcpccv",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Chucvu",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "no"
+}

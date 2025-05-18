@@ -1,0 +1,62 @@
+{
+  "annotations": {
+    "changelogDate": "20250413123408"
+  },
+  "fields": [
+    {
+      "fieldName": "manv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hoten",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngaysinh",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "gioitinh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quequan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diachi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hsluong",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "msthue",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Nhanvien",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "chucvu",
+      "otherEntityRelationshipName": "nhanvien",
+      "relationshipName": "chucvu",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "phongban",
+      "otherEntityRelationshipName": "nhanvien",
+      "relationshipName": "phongban",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "no"
+}

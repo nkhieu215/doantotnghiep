@@ -1,0 +1,190 @@
+<div>
+  <h2 id="page-heading" data-cy="ThamsotlHeading">
+    <span jhiTranslate="doAnApp.thamsotl.home.title">Thamsotls</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="doAnApp.thamsotl.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-thamsotl"
+        [routerLink]="['/thamsotl/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="doAnApp.thamsotl.home.createLabel">Create a new Thamsotl</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (thamsotls?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="doAnApp.thamsotl.home.notFound">No Thamsotls found</span>
+    </div>
+  }
+
+  @if (thamsotls && thamsotls.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [sortState]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="thangnam">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.thangnam">Thangnam</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="ncchuan">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.ncchuan">Ncchuan</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giocchuan">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.giocchuan">Giocchuan</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hsgioth">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.hsgioth">Hsgioth</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hsgiole">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.hsgiole">Hsgiole</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="pcan">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.pcan">Pcan</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tlbhxh">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.tlbhxh">Tlbhxh</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tlbhyt">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.tlbhyt">Tlbhyt</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tlbhtn">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.tlbhtn">Tlbhtn</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tlkpcd">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.tlkpcd">Tlkpcd</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nhanvien.id">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.thamsotl.nhanvien">Nhanvien</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (thamsotl of thamsotls; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/thamsotl', thamsotl.id, 'view']">{{ thamsotl.id }}</a>
+              </td>
+              <td>{{ thamsotl.thangnam }}</td>
+              <td>{{ thamsotl.ncchuan }}</td>
+              <td>{{ thamsotl.giocchuan }}</td>
+              <td>{{ thamsotl.hsgioth }}</td>
+              <td>{{ thamsotl.hsgiole }}</td>
+              <td>{{ thamsotl.pcan }}</td>
+              <td>{{ thamsotl.tlbhxh }}</td>
+              <td>{{ thamsotl.tlbhyt }}</td>
+              <td>{{ thamsotl.tlbhtn }}</td>
+              <td>{{ thamsotl.tlkpcd }}</td>
+              <td>
+                @if (thamsotl.nhanvien) {
+                  <div>
+                    <a [routerLink]="['/nhanvien', thamsotl.nhanvien.id, 'view']">{{ thamsotl.nhanvien.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/thamsotl', thamsotl.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/thamsotl', thamsotl.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(thamsotl)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (thamsotls && thamsotls.length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [page]="page"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  }
+</div>

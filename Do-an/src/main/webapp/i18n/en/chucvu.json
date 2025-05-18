@@ -1,0 +1,27 @@
+{
+  "doAnApp": {
+    "chucvu": {
+      "home": {
+        "title": "Chức vụ",
+        "refreshListLabel": "Tải lại trang",
+        "createLabel": "Thêm mới chức vụ",
+        "createOrEditLabel": "Thêm mới chỉnh sửa chức vụ",
+        "notFound": "Không tìm thấy chức vụ"
+      },
+      "created": "Thông tin chức vụ được thêm mới :: {{ param }}",
+      "updated": "Thông tin chức vụ được cập nhật :: {{ param }}",
+      "deleted": "Thông tin chức vụ được xóa :: {{ param }}",
+      "delete": {
+        "question": "Bạn chắc chắn muốn xóa chức vụ này ? {{ id }}?"
+      },
+      "detail": {
+        "title": "Chức vụ"
+      },
+      "id": "ID",
+      "macv": "Mã chức vụ",
+      "tencv": "Tên chức vụ",
+      "hcpccv": "Hệ số phụ cấp chức vụ",
+      "nhanvien": "Nhân viên"
+    }
+  }
+}

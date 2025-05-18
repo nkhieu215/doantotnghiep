@@ -1,0 +1,158 @@
+<div>
+  <h2 id="page-heading" data-cy="BangchamcongHeading">
+    <span jhiTranslate="doAnApp.bangchamcong.home.title">Bangchamcongs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="doAnApp.bangchamcong.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-bangchamcong"
+        [routerLink]="['/bangchamcong/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="doAnApp.bangchamcong.home.createLabel">Create a new Bangchamcong</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (bangchamcongs?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="doAnApp.bangchamcong.home.notFound">No Bangchamcongs found</span>
+    </div>
+  }
+
+  @if (bangchamcongs && bangchamcongs.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [sortState]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="ncdilam">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.bangchamcong.ncdilam">Ncdilam</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="thangcc">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.bangchamcong.thangcc">Thangcc</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nclephep">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.bangchamcong.nclephep">Nclephep</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="xeploai">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.bangchamcong.xeploai">Xeploai</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="ngayththuong">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.bangchamcong.ngayththuong">Ngayththuong</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="ngaythle">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.bangchamcong.ngaythle">Ngaythle</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nhanvien.id">
+              <div class="d-flex">
+                <span jhiTranslate="doAnApp.bangchamcong.nhanvien">Nhanvien</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (bangchamcong of bangchamcongs; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/bangchamcong', bangchamcong.id, 'view']">{{ bangchamcong.id }}</a>
+              </td>
+              <td>{{ bangchamcong.ncdilam }}</td>
+              <td>{{ bangchamcong.thangcc }}</td>
+              <td>{{ bangchamcong.nclephep }}</td>
+              <td>{{ bangchamcong.xeploai }}</td>
+              <td>{{ bangchamcong.ngayththuong }}</td>
+              <td>{{ bangchamcong.ngaythle }}</td>
+              <td>
+                @if (bangchamcong.nhanvien) {
+                  <div>
+                    <a [routerLink]="['/nhanvien', bangchamcong.nhanvien.id, 'view']">{{ bangchamcong.nhanvien.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/bangchamcong', bangchamcong.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/bangchamcong', bangchamcong.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(bangchamcong)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (bangchamcongs && bangchamcongs.length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [page]="page"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  }
+</div>

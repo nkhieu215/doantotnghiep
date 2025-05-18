@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20250413124615"
+  },
+  "fields": [
+    {
+      "fieldName": "bacthue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tu",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "den",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "thuesuat",
+      "fieldType": "Float"
+    }
+  ],
+  "name": "Thuetn",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "no"
+}
